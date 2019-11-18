@@ -1,0 +1,29 @@
+1. 导入包需要把包路径添加到系统(sys)环境变量
+
+暂定包名 modu
+
+modu/
+	source/
+	
+	init
+	buttonMap
+	config
+	
+
+from modu import * 
+可以直接**访问** __init__ 中初始化的所有**文件**、**常量**、**文件内的常量**
+
+调用时需使用 filename.func() or filename.constant 这种方式
+
+---
+
+使用类管理包括getDevice在内的常用方法
+把一个设备看作一个类
+	这个类里面包含操作设备的各种方法
+	包括按键地图
+	不包括图片，之类属性
+
+调用时使用 filename.Class() 构建实例
+
+config 常量
+image

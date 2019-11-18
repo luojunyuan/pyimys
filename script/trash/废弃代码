@@ -1,0 +1,44 @@
+def circle(self):
+        """
+            fight for one circle
+        """
+        self._checkPosition(IMAGE_Quest, 0.3)
+
+        if self.match('IMAGE_Quest'):
+            self.tap('start', 1)
+        elif self.match('IMAGE_Result'):
+            self.tap('again', 1)            
+
+        timecount = 0
+
+        while not self.match('IMAGE_Result'):
+            self.botSleep(1)
+            if self.match('IMAGE_Failed'):
+                self.tap('stage', 1)
+                break
+
+            timecount += 1
+
+        self.tap('over', 1)
+
+    
+    def moewaza(self, waza):
+        pass
+
+
+    def match(self, position):
+
+        if position == 'IMAGE_Loding':
+            return self._checkPosition(IMAGE_Loding, 0.3)
+        elif position == 'IMAGE_Result':
+            return self._checkPosition(IMAGE_Result, 0.35)
+        elif position == 'IMAGE_Lvup':
+            return self._checkPosition(IMAGE_Lvup, 0.08)
+        elif position == 'IMAGE_NoneBP':
+            return self._checkPosition(IMAGE_NoneBP, 0.5)
+        elif position == 'IMAGE_Fircls':
+            return self._checkPosition(IMAGE_Fircls, 0.5)
+        elif position == 'IMAGE_Failed':
+            return self._checkPosition(IMAGE_Failed, 0.2)
+        elif position == 'IMAGE_Quest':
+            return self._checkPosition(IMAGE_Quest, 0.4)
